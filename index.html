@@ -209,7 +209,7 @@ hr { border:none; border-top:1px solid var(--gray-200); margin:20px 0; }
 
 <!-- 경력 요약 -->
 <div class="section">
-  <div class="section-title"><i class="fas fa-briefcase"></i> 경력 요약 (총 업무경력 4년)</div>
+  <div class="section-title"><i class="fas fa-briefcase"></i> 경력 요약 (총 업무경력 <span id="total-career"></span>)</div>
   <table class="career-table">
     <tr><th>기간</th><th>소속</th><th>직급/부서</th><th>핵심 역할</th><th>비고</th></tr>
     <tr>
@@ -619,5 +619,22 @@ hr { border:none; border-top:1px solid var(--gray-200); margin:20px 0; }
 </div>
 
 </div><!-- container -->
+<script>
+// 총 업무경력 자동 계산 (아우토크립트 + 정도UIT만 합산)
+(function() {
+  var now = new Date();
+  var y = now.getFullYear(), m = now.getMonth() + 1;
+  // 아우토크립트: 2024.07 ~ 현재
+  var autocrypt = (y * 12 + m) - (2024 * 12 + 7);
+  // 정도UIT: 2021.01 ~ 2023.04
+  var jungdo = (2023 * 12 + 4) - (2021 * 12 + 1);
+  var total = autocrypt + jungdo;
+  var years = Math.floor(total / 12);
+  var months = total % 12;
+  var text = years > 0 ? years + '년' : '';
+  if (months > 0) text += (text ? ' ' : '') + months + '개월';
+  document.getElementById('total-career').textContent = text;
+})();
+</script>
 </body>
 </html>
