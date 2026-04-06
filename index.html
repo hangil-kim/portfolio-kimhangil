@@ -632,8 +632,8 @@ hr { border:none; border-top:1px solid var(--gray-200); margin:20px 0; }
 (function() {
   var now = new Date();
   var y = now.getFullYear(), m = now.getMonth() + 1;
-  // 아우토크립트: 2024.07 ~ 현재
-  var autocrypt = (y * 12 + m) - (2024 * 12 + 7);
+  // 아우토크립트: 2024.07 ~ 현재 (당월 포함)
+  var autocrypt = (y * 12 + m) - (2024 * 12 + 7) + 1;
   // 정도UIT: 2021.01 ~ 2023.04
   var jungdo = (2023 * 12 + 4) - (2021 * 12 + 1);
   var total = autocrypt + jungdo;
