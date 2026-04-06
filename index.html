@@ -170,9 +170,40 @@ hr { border:none; border-top:1px solid var(--gray-200); margin:20px 0; }
 .papers-list li { margin-bottom:3px; }
 
 @media print {
-  body { padding:0; }
-  .hero { padding: 24px 0 20px; }
-  .project-card, .paper-card { break-inside:avoid; }
+  @page { size: A4; margin: 12mm 10mm 12mm 10mm; }
+  body { padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .hero { padding: 20px 0 16px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .hero::before { display:none; }
+  .container { max-width:100%; padding:0 10px; }
+  .section { padding: 16px 0 8px; }
+  hr { margin: 12px 0; }
+
+  /* 테이블 페이지 넘김 방지 */
+  table { page-break-inside:avoid; font-size:9pt; }
+  tr { page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  td { padding:5px 8px; }
+  .career-table td:nth-child(1) { width:120px; }
+  .career-table td:nth-child(2) { width:100px; }
+  .career-table td:nth-child(3) { width:130px; }
+  .career-table td:nth-child(5) { width:180px; }
+
+  /* 카드/섹션 페이지 넘김 방지 */
+  .project-card, .paper-card { break-inside:avoid; page-break-inside:avoid; margin-bottom:8px; padding:8px 12px; }
+  .org-header { break-after:avoid; page-break-after:avoid; }
+  .section-title { break-after:avoid; page-break-after:avoid; }
+  .result-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  /* 이미지 크기 조절 */
+  .project-img { max-height:160px; }
+  .img-row img { max-height:140px; }
+
+  /* 하단 2단 그리드 */
+  .bottom-grid { gap:0 16px; }
+
+  /* 기술 태그 */
+  .tech-tag, .tech-tag.advanced { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .award-badge { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
 </style>
 </head>
