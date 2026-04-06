@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포트폴리오 — 김한길 (인쇄용 압축본)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+  --navy: #1b3a5c;
+  --blue: #2a6496;
+  --blue-light: #4a8bc2;
+  --blue-pale: #e8f0f8;
+  --blue-bg: #f4f8fc;
+  --border: #c8d8e8;
+  --accent: #d4943a;
+  --gray-50: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --radius: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  color: var(--gray-900); background: #fff; line-height: 1.65; font-size: 10.5pt;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #1a3550 0%, #2a5a80 40%, #3d7ab5 100%);
+  color: #fff; padding: 40px 0 34px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content:''; position:absolute; top:-40%; right:-15%; width:420px; height:420px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius:50%;
+}
+.hero .container { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; }
+.hero-left h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+.hero-left .subtitle { font-size: 13px; opacity: 0.85; font-weight: 400; letter-spacing: 2px; }
+.hero-right { text-align:right; font-size: 12px; line-height: 2; opacity: 0.9; }
+.hero-right i { margin-right: 5px; opacity: 0.7; font-size: 11px; }
+
+/* ── SECTION ── */
+.section { padding: 28px 0 16px; }
+.section-title {
+  display:flex; align-items:center; gap:8px;
+  font-size: 16px; font-weight: 700; color: var(--navy);
+  margin-bottom: 14px; padding-bottom: 8px;
+  border-bottom: 2.5px solid var(--blue);
+}
+.section-title i { color: var(--blue); font-size: 14px; }
+
+/* ── TABLE (최소 9.5pt) ── */
+table { width:100%; border-collapse:collapse; margin:6px 0 12px; font-size:9.5pt; }
+th {
+  background: var(--navy); color:#fff; font-weight:600;
+  padding:6px 10px; text-align:left; white-space:nowrap; font-size:9.5pt;
+}
+td { padding:6px 10px; border-bottom:1px solid var(--gray-200); vertical-align:top; font-size:9.5pt; }
+tr:nth-child(even) td { background: var(--gray-50); }
+
+/* 학력 */
+.edu-table td:nth-child(1) { width:140px; white-space:nowrap; }
+.edu-table td:nth-child(2) { width:160px; font-weight:700; }
+.edu-table td:nth-child(4) { white-space:nowrap; color:var(--accent); font-weight:600; }
+
+/* 경력 */
+.career-table td:nth-child(1) { width:130px; white-space:nowrap; }
+.career-table td:nth-child(2) { width:110px; white-space:nowrap; font-weight:700; }
+.career-table td:nth-child(3) { width:140px; }
+.career-table td:nth-child(4) { }
+.career-table td:nth-child(5) { width:210px; white-space:nowrap; color:var(--gray-500); font-size:9.5pt; }
+
+/* 역량 */
+.skill-table td:nth-child(1) { width:140px; font-weight:700; color:var(--navy); white-space:nowrap; }
+
+/* 일반 */
+.compact-table td:nth-child(1) { white-space:nowrap; }
+
+/* ── ORG HEADER ── */
+.org-header {
+  font-size: 11.5pt; font-weight: 700; color: var(--blue);
+  margin: 18px 0 8px; padding: 8px 12px;
+  background: var(--blue-pale); border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0;
+}
+
+/* ── PROJECT CARD ── */
+.project-card {
+  background: var(--blue-bg); border:1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 16px; margin-bottom: 10px; page-break-inside: avoid;
+}
+.project-card h4 {
+  font-size: 11.5pt; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+.meta-row {
+  display:grid; grid-template-columns: 65px 1fr; gap:3px 8px; font-size:9.5pt; margin-bottom:6px;
+}
+.meta-row .label { color:var(--blue); font-weight:700; white-space:nowrap; }
+.meta-row .val { color:var(--gray-700); }
+
+/* 내용 2단 */
+.content-cols {
+  display:grid; grid-template-columns:1fr 1fr; gap:0 16px; font-size:9.5pt; margin-top:4px;
+}
+.content-cols.single { grid-template-columns:1fr; }
+.content-cols ul { padding-left:16px; margin:0; }
+.content-cols li { margin-bottom:2px; line-height:1.55; }
+
+/* 성과 — 줄 분리 */
+.result-box {
+  background: var(--blue-pale); border-left:3px solid var(--blue);
+  border-radius: 0 6px 6px 0; padding:8px 12px; margin-top:8px; font-size:9.5pt;
+}
+.result-box .tag {
+  display:inline-block; background:var(--blue); color:#fff;
+  font-size:9.5pt; font-weight:700; padding:1px 8px; border-radius:3px;
+  margin-bottom:4px;
+}
+.result-item { padding: 2px 0 2px 4px; line-height:1.55; }
+.result-item::before { content:'▸ '; color:var(--blue); font-weight:700; }
+.result-highlight { font-weight:700; color:var(--navy); }
+
+/* 이미지 */
+.project-img {
+  width:100%; max-height:280px; object-fit:contain; border-radius:6px;
+  margin-top:8px; border:1px solid var(--border); background:var(--gray-50);
+}
+.img-row { display:flex; gap:8px; margin-top:8px; }
+.img-row img { flex:1; max-height:240px; object-fit:contain; border-radius:6px; border:1px solid var(--border); background:var(--gray-50); }
+
+/* ── PAPER CARD ── */
+.paper-card {
+  background: var(--blue-bg); border:1px solid var(--border); border-radius: var(--radius);
+  padding:12px 16px; margin-bottom:10px; page-break-inside:avoid;
+}
+.paper-card h4 {
+  font-size:11.5pt; font-weight:700; color:var(--navy); margin-bottom:8px;
+  padding-bottom:5px; border-bottom:1px solid var(--border);
+}
+.paper-meta { display:grid; grid-template-columns:65px 1fr; gap:3px 8px; font-size:9.5pt; }
+.paper-meta .label { color:var(--blue); font-weight:700; }
+.award-badge {
+  display:inline-block; background:linear-gradient(135deg, var(--accent), #c07a20);
+  color:#fff; font-size:9.5pt; font-weight:700; padding:1px 8px;
+  border-radius:3px; margin-left:4px;
+}
+
+/* ── TECH TAGS ── */
+.tech-tags { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.tech-tag {
+  display:inline-flex; align-items:center; gap:4px;
+  border:1px solid var(--border); color:var(--gray-700);
+  font-size:9.5pt; padding:4px 12px; border-radius:16px; background:#fff;
+}
+.tech-tag i { color:var(--blue); font-size:11px; }
+.tech-tag.advanced { background:var(--navy); color:#fff; border-color:var(--navy); }
+.tech-tag.advanced i { color:#fff; }
+
+/* ── BOTTOM GRID ── */
+.bottom-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; }
+
+/* ── MISC ── */
+hr { border:none; border-top:1px solid var(--gray-200); margin:20px 0; }
+.papers-list { font-size:9.5pt; margin:4px 0 4px 18px; }
+.papers-list li { margin-bottom:3px; }
+
+@media print {
+  @page { size: A4; margin: 10mm 8mm 10mm 8mm; }
+  body { padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; font-size:9.5pt; }
+  .hero { padding: 14px 0 12px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .hero-left h1 { font-size: 22px; }
+  .hero-right { font-size: 11px; }
+  .hero::before { display:none; }
+  .container { max-width:100%; padding:0 8px; }
+  .section { padding: 10px 0 4px; }
+  .section-title { font-size: 14px; margin-bottom: 8px; padding-bottom: 5px; }
+  hr { margin: 8px 0; }
+  p { margin-bottom: 6px; }
+
+  /* 테이블 페이지 넘김 방지 */
+  table { page-break-inside:avoid; font-size:8.5pt; margin:4px 0 6px; }
+  tr { page-break-inside:avoid; }
+  th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  th { padding:4px 6px; font-size:8.5pt; }
+  td { padding:4px 6px; }
+  .career-table td:nth-child(1) { width:110px; }
+  .career-table td:nth-child(2) { width:75px; white-space:normal !important; }
+  .career-table td:nth-child(3) { width:125px; }
+  .career-table td:nth-child(4) { width:auto; }
+  .career-table td:nth-child(5) { width:140px; white-space:normal !important; }
+
+  /* 카드/섹션 페이지 넘김 방지 */
+  .project-card, .paper-card { break-inside:avoid; page-break-inside:avoid; margin-bottom:8px; padding:8px 12px; }
+  .org-header { break-after:avoid; page-break-after:avoid; }
+  .section-title { break-after:avoid; page-break-after:avoid; }
+  .result-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  /* 이미지 크기 조절 */
+  .project-img { max-height:160px; }
+  .img-row img { max-height:140px; }
+
+  /* 하단 2단 그리드 */
+  .bottom-grid { gap:0 16px; }
+
+  /* 기술 태그 */
+  .tech-tag, .tech-tag.advanced { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .award-badge { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-left">
+      <h1>포트폴리오 (김한길)</h1>
+      <div class="subtitle">모빌리티 · 스마트시티 · 사업 개발 및 수행</div>
+    </div>
+    <div class="hero-right">
+      <div><i class="fas fa-birthday-cake"></i>1993년생 · 서울 광진구</div>
+      <div><i class="fas fa-phone"></i>010-4786-4667</div>
+      <div><i class="fas fa-envelope"></i>hangil0209@gmail.com</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 커리어 소개 -->
+<div class="section">
+  <div class="section-title"><i class="fas fa-user"></i> 커리어 소개</div>
+  <p style="font-size:10.5pt; line-height:1.8; color:var(--gray-700);"><b>도시공학</b>을 전공하며 미래 기술을 도시공간에 접목하기 위한 고민을 하였습니다. <b>공공 스마트시티 계획 수립 및 조성사업 기획·제안</b>, <b>교통 데이터 분석 기반 컨설팅</b> 경험을 쌓았고, 나아가 <b>DRT·택시·콜밴 등 모빌리티 플랫폼</b>을 현장에서 구현하기 위한 <b>사업 기획·관리·운영</b>을 수행하였습니다. 데이터 기반 서비스 최적화와 이해관계자 협력을 기반으로 <b>모빌리티 솔루션을 통한 일상의 혁신을 만들고자 합니다.</b></p>
+</div>
+
+<hr>
+
+<!-- 경력 요약 -->
+<div class="section">
+  <div class="section-title"><i class="fas fa-briefcase"></i> 경력 요약 (총 업무경력 <span id="total-career"></span> + 연구경력 2년)</div>
+  <table class="career-table">
+    <tr><th>기간</th><th>소속</th><th>직급/부서</th><th>핵심 역할</th><th>비고</th></tr>
+    <tr>
+      <td>2025.07~현재<br>(9개월)</td>
+      <td>모빌리전트(주)</td>
+      <td>과장</td>
+      <td>셔클 DRT 운영지역 관리,<br>모빌리티 신사업 기획</td>
+      <td>아우토크립트 대표 공동창업 벤처기업<br>아우토크립트 겸직 중</td>
+    </tr>
+    <tr>
+      <td>2024.07~현재<br>(1년 9개월)</td>
+      <td>아우토크립트(주)</td>
+      <td>대리,<br>미래모빌리티전략실<br>MaaS/DRT사업팀</td>
+      <td>스마트시티 챌린지 사업 수행,<br>모빌리티 플랫폼 구축/운영,<br>신사업 기획</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2021.01~2023.04<br>(2년 4개월)</td>
+      <td>(주)정도UIT</td>
+      <td>연구원,<br>스마트시티컨설팅부</td>
+      <td>스마트도시계획 수립,<br>공공 스마트시티 공모사업 제안 및 컨설팅</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2018.12~2020.08<br>(1년 8개월)</td>
+      <td>서울대학교<br>환경대학원</td>
+      <td>연구원</td>
+      <td>신산업 공간/네트워크 분석 연구,<br>스마트산업단지 특화계획 연구</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2017.07~2018.02<br>(7개월)</td>
+      <td>홍익대학교<br>도시공학과</td>
+      <td>보조연구원</td>
+      <td>네트워크 분석 기반 도시 상권 연구</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<hr>
+
+<!-- 핵심 역량 -->
+<div class="section">
+  <div class="section-title"><i class="fas fa-star"></i> 핵심 역량 키워드</div>
+  <table class="skill-table">
+    <tr><th>분야</th><th>역량</th></tr>
+    <tr><td><i class="fas fa-bus" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> 모빌리티 사업수행</td><td>DRT(수요응답형교통)/택시/콜밴 플랫폼 기획·구축·운영, 정부 공모사업 제안 및 관리</td></tr>
+    <tr><td><i class="fas fa-city" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> 스마트시티 컨설팅</td><td>스마트도시계획 수립, 스마트시티 조성사업 기획/제안, 리빙랩 운영, 거버넌스 구축</td></tr>
+    <tr><td><i class="fas fa-robot" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> AI 활용(Vibe Coding)</td><td>Python 기반 데이터 자동 분석 및 리포트 생성툴 구축, 모빌리티 플랫폼 PoC 데모 설계</td></tr>
+    <tr><td><i class="fas fa-chart-bar" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> 데이터 분석</td><td>광역 데이터허브 구축, GIS 공간분석, 텍스트 분석, 네트워크 분석, 지역산업연관분석</td></tr>
+    <tr><td><i class="fas fa-lightbulb" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> 사업 기획/제안</td><td>공공 공모사업 기획/제안, 해외 ODA 사업 기획/제안, 신사업 기획</td></tr>
+    <tr><td><i class="fas fa-handshake" style="color:var(--blue);margin-right:4px;font-size:11px;"></i> 이해관계자 관리</td><td>지자체 컨설팅, 중앙부처/지자체/민간기업 파트너십 구축, 운수사 관리</td></tr>
+  </table>
+</div>
+
+<hr>
+
+<!-- ===== 프로젝트 ===== -->
+<div class="section">
+  <div class="section-title"><i class="fas fa-folder-open"></i> 주요 프로젝트 상세</div>
+
+  <!-- 1. 아우토크립트 -->
+  <div class="org-header"><i class="fas fa-building" style="margin-right:6px;"></i>1. 아우토크립트 (2024.07~현재)</div>
+
+  <div class="project-card">
+    <h4>1-1. 포항 DRT·택시 플랫폼 구축 및 운영 사업 PM</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">포항 스마트시티 챌린지 본사업 — 스마트교통 분야</span>
+      <span class="label">발주처</span><span class="val">국토교통부 / 포항시청 / 포스코홀딩스(컨소시엄총괄) / 지역 운수업체</span>
+      <span class="label">역할</span><span class="val">스마트교통 분야 사업 수행팀 (DRT + 택시 통합 모빌리티 플랫폼 구축/운영)</span>
+      <span class="label">진행상황</span><span class="val">본사업('23~25) 준공, 유지보수 용역('25) 준공</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>공공 통합 모빌리티 플랫폼 '타보소' 구축: 승객앱(Android/iOS), 기사앱(Android), 관리자시스템(Web)</li>
+        <li>DRT 서비스: 쏠라티 16대, 다이나믹라우팅 기반 배차/노선 시스템, 5개 존 운영</li>
+        <li>공공형 택시호출 서비스: 배차수수료 무료, 포인트/지역화폐 자동결제 연동</li>
+      </ul></div>
+      <div><ul>
+        <li>서비스 유지보수: 시스템 유지관리, 사용자(기사/승객) 교육, 장애 대응</li>
+        <li>계약 및 보조금 집행 관리: API 연동, 관련 용역 계약, 홍보 마케팅</li>
+        <li>SCEWC(바르셀로나), WSCE(킨텍스) 등 국내외 전시 기획/참여</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">앱 누적 가입자 <b>3.2만명</b> ('25 기준)</div>
+      <div class="result-item">택시 기사 가입 <b>1,100명</b> (포항 전체 택시의 40%)</div>
+      <div class="result-item">택시 호출 월 <b>1.5만건</b>, 지역화폐 자동결제 비율 <b>51.5%</b> 달성</div>
+      <div class="result-item">2023 WSCE 어워즈 모빌리티 분야 <b>수상</b></div>
+      <div class="result-item">규제샌드박스 승인 등 제도적 성과</div>
+    </div>
+    <div class="img-row">
+      <img src="img_compressed/1-1a.jpg" alt="포항 스마트시티 챌린지 1">
+      <img src="img_compressed/1-1b.jpg" alt="포항 스마트시티 챌린지 2">
+    </div>
+  </div>
+
+  <div class="project-card">
+    <h4>1-2. 경북 스마트시티 데이터허브 구축사업 PM</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">포항 스마트시티 챌린지 본사업 - 데이터허브 분야</span>
+      <span class="label">발주처</span><span class="val">국토교통부 / 경상북도 / 포항시청</span>
+      <span class="label">역할</span><span class="val">경상북도 스마트도시 광역 데이터허브 및 교통분석 서비스 구축 사업 수행팀</span>
+      <span class="label">진행상황</span><span class="val">구축 완료</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>NGSI-LD 표준 기반 광역 데이터허브 구축 (경상북도 전역 10개 시, 12개 군 대상)</li>
+        <li>8종 표준 + 17종 제안 데이터 모델 (버스, 택시 DTG, 교통카드, 유동인구 등)</li>
+      </ul></div>
+      <div><ul>
+        <li>교통분석 서비스: 대중교통 노선 분석 대시보드, 교통음영지역 DRT 도입 분석</li>
+        <li>교통 네트워크 구조 분석 기반 교통음영지역 선정 및 DRT 노선 최적화, 유동인구 Hot Spot 분석</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">포항시 <b>8종 데이터셋</b> (유동인구, 버스/택시 DTG, 교통카드, 정류장 등) 실시간 연동</div>
+      <div class="result-item">경북도 내 <b>22개 지자체</b> 확장 적용 가능한 멀티테넌트 구조 구축 완료</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <h4>1-3. 해외 DRT 실증사업 기획 및 제안</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">K-City Network 라오스 비엔티안 DRT 실증사업</span>
+      <span class="label">발주처</span><span class="val">국토교통부 / 라오스 교통부(MPWT) / 공영버스운수사(VCSBE)</span>
+      <span class="label">역할</span><span class="val">DRT 플랫폼 현지화 기획 및 사업계획 제안</span>
+      <span class="label">진행상황</span><span class="val">사업계획서 제안 (심사 탈락)</span>
+    </div>
+    <div class="content-cols single">
+      <div><ul>
+        <li>라오스 교통부 및 운수사 사업 참여 합의</li>
+        <li>라오스 비엔티안 BRT 정류장 연계 DRT 서비스 실증 기획 (3개월 POC)</li>
+        <li>승객앱/기사앱/관리자시스템 현지 맞춤 개발 기획 (지도/언어 현지화)</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">자체 DRT 솔루션의 <b>최초 해외 실증 사업</b> 기획</div>
+    </div>
+  </div>
+
+  <!-- 2. 모빌리전트 -->
+  <div class="org-header"><i class="fas fa-rocket" style="margin-right:6px;"></i>2. 모빌리전트 (2025.07~현재)</div>
+
+  <div class="project-card">
+    <h4>2-1. 셔클 DRT 서비스 지역 확장 및 운영관리</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">현대자동차 셔클 DRT 서비스지역 운영관리</span>
+      <span class="label">발주처</span><span class="val">현대자동차(주)</span>
+      <span class="label">역할</span><span class="val">서비스 운영품질 관리, 신규 지역 오픈 관리, 지자체/운수사 교육/관리, 지역별 서비스 최적화</span>
+      <span class="label">진행상황</span><span class="val">서비스 운영관리 (25년~)</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>인천 검단, 제천, 영덕, 양구, 강릉 등 7개+ 지자체 셔클 DRT 운영관리</li>
+        <li>신규 지역 서비스 오픈: 차량 및 운행환경 점검, 시스템 세팅, 운수사/기사 교육</li>
+        <li>운영 중 서비스 최적화: 교통 수요·공급 분석 기반 정류장·노선·운행스케줄·운영정책 조정</li>
+      </ul></div>
+      <div><ul>
+        <li>Python 기반 운행 데이터 자동 분석 및 모니터링, 데이터 기반 이슈 발굴</li>
+        <li>지자체·운수사·플랫폼사 간 이해관계 조율 및 서비스 안정화 컨설팅</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">서비스 지역 <b>4개 이상 확장</b> (2025년 하반기~)</div>
+      <div class="result-item"><b>Python 기반 운행 데이터 자동 분석 파이프라인</b> 및 지역별 모니터링 리포트 자동생성 툴 구축</div>
+    </div>
+    <img src="img_compressed/2-1.jpg" alt="셔클 DRT 운영관리" class="project-img">
+  </div>
+
+  <div class="project-card">
+    <h4>2-2. 콜밴 플랫폼 사업 개발 및 PoC 기획</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">AI 다변수 최적화 알고리즘 기반 지능형 호출/배차 매칭 콜밴 플랫폼 '딜리카'</span>
+      <span class="label">발주처</span><span class="val">전국밴화물여객협동조합 MOU (인천공항 50대 실증 확약)</span>
+      <span class="label">역할</span><span class="val">사업 기획 및 개발, 정부과제 지원 연계, PoC 기획</span>
+      <span class="label">진행상황</span><span class="val">PoC 기획 및 정부과제 지원 완료, 실증 준비 중</span>
+    </div>
+    <div class="content-cols single">
+      <div><ul>
+        <li>항공편 실시간 연동 기반 공항 이동 특화 콜밴 플랫폼 설계</li>
+        <li>콜밴 공급 조합 협력 기반 사업 기회 개발</li>
+        <li>AI 다변수 매칭 엔진 기획: 수요조건(이동목적/인원/짐/시간/항공편)과 공급조건(차량유형/요금/평점/기사숙련도) 고려</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">실증 KPI 목표: 인천공항 실증(콜밴 50대) 일 <b>2백콜</b>, 고객 <b>3천명</b> 확보</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <h4>2-3. 정부과제 및 민간사업 기획 및 제안</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">정부과제 및 민간 제안서 기획/작성</span>
+      <span class="label">발주처</span><span class="val">중소벤처기업부, 문화체육관광부, 펌프킨, SK하이닉스 등</span>
+      <span class="label">역할</span><span class="val">사업계획서 및 제안서 기획/작성 총괄</span>
+      <span class="label">진행상황</span><span class="val">다수 프로젝트 지원 및 선정</span>
+    </div>
+    <div class="content-cols single">
+      <div><ul>
+        <li>모빌리티 플랫폼 구축 관련 공공사업 제안</li>
+        <li>민간 모빌리티 플랫폼 구축 및 운영 제안</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- 3. 정도UIT -->
+  <div class="org-header"><i class="fas fa-landmark" style="margin-right:6px;"></i>3. 정도UIT (2021.01~2023.04)</div>
+
+  <div class="project-card">
+    <h4>3-1. 지자체 공공 스마트시티 마스터플랜 수립</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">양천구 스마트도시 중장기 마스터플랜 수립 용역</span>
+      <span class="label">발주처</span><span class="val">양천구청</span>
+      <span class="label">역할</span><span class="val">도시 현황분석, 비전/전략 수립, 서비스 기획, 인프라/조직/재원/로드맵 수립</span>
+      <span class="label">진행상황</span><span class="val">2021.04~2022.05 수행 완료</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>8개 분야(도시행정, 교통, 보건의료복지, 환경에너지, 방범방재, 교육, 문화여가, 근로고용) 종합 현황분석</li>
+        <li>10개 분야 30개 스마트도시서비스 기획 및 서비스별 사업계획 수립</li>
+      </ul></div>
+      <div><ul>
+        <li>시민 리빙랩 4회 운영, 26개과 55개팀 공무원 부서면담 3회</li>
+        <li>목동신시가지 스마트인프라 가이드라인 수립</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">양천구 스마트시티 경제적 파급효과 분석결과: 생산유발 <b>551.6억원</b>, 부가가치유발 <b>261.4억원</b></div>
+      <div class="result-item">양천구, 강동구, 옥천군, 김해시 등 <b>4개 이상 지자체</b> 스마트도시계획 수립</div>
+    </div>
+    <img src="img_compressed/3-1.jpg" alt="양천구 마스터플랜" class="project-img">
+  </div>
+
+  <div class="project-card">
+    <h4>3-2. 공공 스마트시티 조성 공모사업 기획 및 제안</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">2022년 양천구 중소도시 스마트시티 조성사업 — 목동학원가 교통/안전환경 해결 스마트 솔루션</span>
+      <span class="label">발주처</span><span class="val">국토교통부 (국비 공모)</span>
+      <span class="label">역할</span><span class="val">서비스 기획 및 사업 제안 작성 (도시문제 분석, 솔루션 설계, KPI 설계, 리빙랩 운영, 예산계획)</span>
+      <span class="label">진행상황</span><span class="val">2022 공모사업 선정</span>
+    </div>
+    <div class="content-cols single">
+      <div><ul>
+        <li>학원 1,164개 밀집(양천구 59%), 불법주정차 5만건 등 데이터 기반 도시문제 정량분석</li>
+        <li>5대 스마트 솔루션 설계: 학원차량 공유, 자전거 지킴이, 스마트 주정차 관리, 주차장 공유, 보행자 횡단안전</li>
+        <li>KPI 체계 수립: 일자리 창출 60명+, 자전거 사고 20% 감소, 불법주정차 단속 20% 증가 등</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item result-highlight">국토부 2022년 중소도시 스마트시티 조성 공모사업 — 서울시 자치구 중 유일 선정</div>
+    </div>
+    <img src="img_compressed/3-2.jpg" alt="양천구 스마트시티 조성사업" class="project-img">
+  </div>
+
+  <div class="project-card">
+    <h4>3-3. LH형 스마트시티 기획 연구 수행</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">스마트시티 도시데이터 조사 및 활용방안 연구</span>
+      <span class="label">발주처</span><span class="val">토지주택연구원(LHI) / LH</span>
+      <span class="label">역할</span><span class="val">서비스 기획, 경제적 타당성 분석, 빅데이터 활용방안 수립</span>
+      <span class="label">진행상황</span><span class="val">준공 완료</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>LH 내외부 332개 시스템, 1,467개 데이터 목록 전수 조사 및 분류체계 수립</li>
+        <li>4단계 스마트도시 데이터 활용 프레임워크 설계</li>
+        <li>공간위계별 47개 스마트도시서비스 기획</li>
+        <li>서비스별 경제적 타당성 분석 (B/C, NPV, IRR)</li>
+      </ul></div>
+      <div><ul>
+        <li>전문가 평가(공공성/경제성/데이터활용성) 기반 서비스 우선순위 도출</li>
+        <li>이해관계자 분석 (LH/입주민/인근주민/지자체/기술업체)</li>
+        <li>LH 데이터허브 구축 방안 제시</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">LH 스마트도시서비스 구축 및 데이터허브 운영 전략 수립 기여</div>
+    </div>
+    <img src="img_compressed/3-3.jpg" alt="도시데이터 연구" class="project-img">
+  </div>
+
+  <!-- 4. 서울대 -->
+  <div class="org-header"><i class="fas fa-flask" style="margin-right:6px;"></i>4. 서울대학교 환경대학원 (2018.12~2020.08)</div>
+
+  <div class="paper-card">
+    <h4>4-1. (논문) 지역별 로봇산업 기반 산업 혁신 방안 연구</h4>
+    <div class="paper-meta">
+      <span class="label">논문 제목</span><span>스마트 전문화를 통한 수도권과 비수도권의 산업 혁신 방안 연구: 로봇산업을 중심으로</span>
+      <span class="label">게재</span><span>「수도권과 비수도권 로봇산업의 경제적 파급효과 분석: 스마트 전문화의 관점에서」,<br>국토계획(대한국토도시계획학회지), 2021.10</span>
+      <span class="label">저자</span><span>김한길(주저자), 이영성</span>
+      <span class="label">방법론</span><span>지역산업연관분석 (Regional Input-Output Analysis)</span>
+      <span class="label">주요 결과</span><span>
+        · 비수도권 HW 중심 로봇산업: 제조업과의 활발한 거래로 수도권 대비 높은 생산유발효과<br>
+        · 수도권 SW 중심 로봇산업: 고차 서비스업과 연관된 고부가가치 산업 특성<br>
+        · 지역별 산업 역량에 기반한 차별화된 스마트 전문화 전략 필요성 제시</span>
+      <span class="label">수상</span><span>서울대학교 환경대학원 석사학위 <b>우수논문상</b> (2020.02) <span class="award-badge">수상</span></span>
+    </div>
+    <img src="img_compressed/4-1.jpg" alt="석사논문" class="project-img" style="max-height:180px;">
+  </div>
+
+  <div class="project-card">
+    <h4>4-2. (프로젝트) 세종 국가 스마트산업단지 특화전략 수립 연구</h4>
+    <div class="meta-row">
+      <span class="label">프로젝트명</span><span class="val">세종 국가 스마트산업단지 특화계획 수립 연구</span>
+      <span class="label">발주처</span><span class="val">LH 세종특별본부</span>
+      <span class="label">역할</span><span class="val">연구보조원 — 세종시 현황분석, 주요 산업 동향 조사, 해외 스마트산단 벤치마킹, 스마트산단 특화전략 도출</span>
+      <span class="label">진행상황</span><span class="val">준공 완료</span>
+    </div>
+    <div class="content-cols">
+      <div><ul>
+        <li>세종시 일반·산업·입지 현황 분석 및 SWOT 분석</li>
+        <li>11개 주요 산업 동향 조사 (제조업/Industry 4.0, 로봇, 에너지, 자율주행, 모빌리티 등)</li>
+        <li>해외 스마트산단 벤치마킹 (독일 아들러스호프, 스웨덴 시스타, 미국 RTP 등)</li>
+      </ul></div>
+      <div><ul>
+        <li>행정수도(워싱턴D.C., 캔버라, 온타리오) 산업구조 비교분석</li>
+        <li>스마트산단 특화전략: 스마트팩토리, 스마트로지스틱스, 스마트모빌리티, 친환경에너지 등</li>
+        <li>충청권 산업경쟁력 분석 및 특화산업 선정</li>
+      </ul></div>
+    </div>
+    <div class="result-box">
+      <span class="tag">성과</span>
+      <div class="result-item">연구 보고서 납품 완료, 세종 국가산업단지 조성 방향 수립 기여</div>
+    </div>
+  </div>
+
+  <!-- 5. 홍익대 -->
+  <div class="org-header"><i class="fas fa-flask" style="margin-right:6px;"></i>5. 홍익대학교 학부연구실 (2017.07~2018.02)</div>
+
+  <div class="paper-card">
+    <h4>5-1. (논문) 텍스트 네트워크 분석 기반 도시 상권 변화 연구</h4>
+    <div class="paper-meta">
+      <span class="label">논문 제목</span><span>A Network Approach to Revealing Dynamic Succession Processes of Urban Land Use and User Experience</span>
+      <span class="label">게재</span><span>Sustainability, 2021, 13, 11955 (SCIE)</span>
+      <span class="label">저자</span><span>Minjin Lee, <b>Hangil Kim</b>, SangHyun Cheon</span>
+      <span class="label">방법론</span><span>네이버 블로그 11,615개 텍스트 마이닝, 단어 동시출현 네트워크 분석 (복잡계 네트워크)</span>
+      <span class="label">주요 결과</span><span>
+        · 홍대 인접 상권(상수, 합정, 연남, 망원)의 상업적 젠트리피케이션 과정 패턴 추적<br>
+        · 시기별 토지이용 변화와 사용자 경험의 네트워크 구조적 변화 분석<br>
+        · 복잡계 네트워크 지표를 활용한 상권 천이 단계 정량적 규명</span>
+      <span class="label">수상</span><span>한국물리학회 가을학술대회 <b>우수발표상</b> (2020.11) <span class="award-badge">수상</span><br>홍익대학교 도시공학과 학부 <b>우수졸업작품상</b> (2018.02) <span class="award-badge">수상</span></span>
+    </div>
+    <img src="img_compressed/5-1.jpg" alt="홍대 상권 연구" class="project-img" style="max-height:180px;">
+  </div>
+
+</div><!-- section -->
+
+<hr>
+
+<!-- 학력 -->
+<div class="section">
+  <div class="section-title"><i class="fas fa-graduation-cap"></i> 학력</div>
+  <table class="edu-table">
+    <tr><th>기간</th><th>학교</th><th>전공</th><th>비고</th></tr>
+    <tr><td>2018.03~2020.08</td><td>서울대학교 환경대학원</td><td>환경계획학과 도시및지역계획 전공 (석사)</td><td>우수논문상 수상</td></tr>
+    <tr><td>2011.03~2018.02</td><td>홍익대학교</td><td>도시공학과 (학사)</td><td>우수졸업작품상 수상</td></tr>
+  </table>
+</div>
+
+<hr>
+
+<!-- 하단: 자격증/수상/논문/기술/해외 -->
+<div class="section">
+  <div class="bottom-grid">
+    <div>
+      <div class="section-title"><i class="fas fa-certificate"></i> 자격증 및 어학</div>
+      <table class="compact-table">
+        <tr><th style="width:60px;">구분</th><th>내용</th><th style="width:100px;">취득일</th></tr>
+        <tr><td>자격증</td><td>도시계획기사</td><td>2020.09</td></tr>
+        <tr><td>어학</td><td>IELTS 7.5 (General)</td><td>2023.12(만료)</td></tr>
+        <tr><td>어학</td><td>OPIc IH</td><td>2024.02(만료)</td></tr>
+        <tr><td>어학</td><td>TOEIC 960</td><td>2020.05(만료)</td></tr>
+      </table>
+
+      <div class="section-title" style="margin-top:18px;"><i class="fas fa-trophy"></i> 수상</div>
+      <table class="compact-table">
+        <tr><th style="width:75px;">수상명</th><th>논문/프로젝트명</th><th style="width:75px;">일시</th></tr>
+        <tr><td>우수발표상</td><td>A Network Approach to Revealing Dynamic Succession ...</td><td>2020.11</td></tr>
+        <tr><td>우수논문상</td><td>스마트 전문화를 통한 수도권과 비수도권의 산업 혁신 방안 연구 ...</td><td>2020.02</td></tr>
+        <tr><td>우수졸업작품상</td><td>텍스트 네트워크 분석 기반 도시 상권 변화 연구</td><td>2018.02</td></tr>
+      </table>
+
+      <div class="section-title" style="margin-top:18px;"><i class="fas fa-book"></i> 학술 논문</div>
+      <ol class="papers-list">
+        <li><b>김한길</b>, 이영성 (2021). "수도권과 비수도권 로봇산업의 경제적 파급효과 분석: 스마트 전문화의 관점에서", 국토계획, 대한국토도시계획학회</li>
+        <li>Lee, M., <b>Kim, H.</b>, & Cheon, S. (2021). "A Network Approach to Revealing Dynamic Succession Processes of Urban Land Use and User Experience", Sustainability, 13, 11955 (SCIE)</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="section-title"><i class="fas fa-tools"></i> 기술 스택</div>
+      <div class="tech-tags">
+        <span class="tech-tag advanced"><i class="fas fa-chart-line"></i> Ucinet/Gephi</span>
+        <span class="tech-tag advanced"><i class="fas fa-file-excel"></i> MS Office</span>
+        <span class="tech-tag"><i class="fab fa-python"></i> Python (데이터 마이닝/분석)</span>
+        <span class="tech-tag"><i class="fas fa-map-marked-alt"></i> QGIS</span>
+        <span class="tech-tag"><i class="fab fa-figma"></i> Figma</span>
+        <span class="tech-tag"><i class="fas fa-robot"></i> Vibe Coding</span>
+        <span class="tech-tag"><i class="fas fa-sticky-note"></i> Notion</span>
+      </div>
+
+      <div class="section-title" style="margin-top:18px;"><i class="fas fa-globe"></i> 해외 경험</div>
+      <table class="compact-table">
+        <tr><th style="width:120px;">기간</th><th>내용</th></tr>
+        <tr><td>2023.07~2024.01</td><td>호주 시드니 워킹홀리데이 (어학연수)</td></tr>
+        <tr><td>2015.09~2016.02</td><td>캄보디아 국제자원활동 (KB국민은행/한국YMCA 주관)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- container -->
+<script>
+// 총 업무경력 자동 계산 (아우토크립트 + 정도UIT만 합산)
+(function() {
+  var now = new Date();
+  var y = now.getFullYear(), m = now.getMonth() + 1;
+  // 아우토크립트: 2024.07 ~ 현재 (당월 포함)
+  var autocrypt = (y * 12 + m) - (2024 * 12 + 7) + 1;
+  // 정도UIT: 2021.01 ~ 2023.04
+  var jungdo = (2023 * 12 + 4) - (2021 * 12 + 1);
+  var total = autocrypt + jungdo;
+  var years = Math.floor(total / 12);
+  var months = total % 12;
+  var text = years > 0 ? years + '년' : '';
+  if (months > 0) text += (text ? ' ' : '') + months + '개월';
+  document.getElementById('total-career').textContent = text;
+})();
+</script>
+</body>
+</html>
